@@ -41,6 +41,12 @@ These components are designed to work without requiring any content from the leg
 
   + This DirectXTex sample is a [command-line utility](https://github.com/Microsoft/DirectXTex/wiki/Texdiag) for analyzing image contents, primarily for debugging purposes.
 
+* ``Texconvalize\``
+
+  + This is a command-line utility for detection of alpha channel in texture: it converts the texture to BC3 and does "texdiag analyze" the result at once, nothing written to disk.
+  + textures with alpha channel have data in both blocks, which means that block6 and block8 are > 0
+  + textures without alpha channenl use only one of the blocks, which means that either block6 or block8 is = 0
+
 * ``DDSView\``
 
   + This DirectXTex sample is a simple Direct3D 11-based viewer for DDS files. For array textures or volume maps, the "<" and ">" keyboard keys will show different images contained in the DDS. The "1" through "0" keys can also be used to jump to a specific image index.
